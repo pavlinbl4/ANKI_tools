@@ -8,10 +8,10 @@ new_words = '/Volumes/big4photo/Documents/ANKI/Saved translations - Saved transl
 anki_folder = "/Volumes/big4photo/Documents/ANKI"
 
 model_id = random.randrange(1 << 30, 1 << 31)
-# print(model_id)
+print(model_id)
 
 deck_id = random.randrange(1 << 30, 1 << 31)
-# print(deck_id)
+print(deck_id)
 
 my_model = genanki.Model(model_id,
                          'Knowledge',
