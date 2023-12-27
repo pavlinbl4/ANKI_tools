@@ -44,4 +44,5 @@ def get_filename(file_path):
 
 
 if __name__ == '__main__':
-    clear_from_tags(select_file())
+    # clear_from_tags(select_file())
+    clear_from_tags("/Volumes/big4photo/Documents/ANKI/ANKI_EXCEL.xlsx")
