@@ -31,7 +31,13 @@ def clear_from_tags(anki_excel_file):
     sheet_names = get_sheet_names(xlsx_file_data)
     current_sheet = xlsx_file_data[sheet_names[0]]
     find_specific_cell(current_sheet)
-    xlsx_file_data.save(f'/Users/evgeniy/Documents/ANKI/{file_name}_cleared.xlsx')
+
+    # create file with new name
+    # xlsx_file_data.save(f'/Users/evgeniy/Documents/ANKI/{file_name}_cleared.xlsx')
+
+    # overwrite source file
+    xlsx_file_data.save(f'/Volumes/big4photo/Documents/ANKI/ANKI_EXCEL.xlsx')
+
     messagebox.showinfo(title="All done", message=f'file {file_name}_cleared.xlsx \ncreated')
 
 
