@@ -1,5 +1,6 @@
 import openpyxl
-from remove_tags import cleanhtml
+from optimise_exel_file import cleanhtml
+from pathlib import Path
 
 
 def read_data(xlsx_file):
@@ -28,10 +29,10 @@ def clear_cells_from_html(input_xlsx_file, columns_for_edit):  # main function
     sheet_names = get_sheet_names(xlsx_file_data)
     current_sheet = xlsx_file_data[sheet_names[0]]
     find_specific_cell(current_sheet, columns_for_edit)
-    xlsx_file_data.save('/Volumes/big4photo/Documents/ANKI/free_from_tags.xlsx')
+    xlsx_file_data.save(f'{Path().home()}/Documents/ANKI/free_from_tags.xlsx')
 
 
 if __name__ == '__main__':
-    anki_excel_file = '/Volumes/big4photo/Documents/ANKI/english_words.xlsx'
+    anki_excel_file = f'{Path().home()}/Documents/ANKI/ANKI_EXCEL.xlsx'
     columns = "BCDEF"
     clear_cells_from_html(anki_excel_file, columns)
