@@ -7,15 +7,21 @@ def cleanhtml(raw_html):
     cleantext = re.sub(clearn, '', raw_html)
 
     # remove quoters
-    cleantext = re.sub('“|”', '', cleantext)
+    cleantext = re.sub('r“|”', '', cleantext)
     return cleantext
+
+def remove_html_tags(text):
+    clean = re.compile('<.*?>')
+    return re.sub(clean, '', text)
 
 
 
 if __name__ == '__main__':
     # line_to_clear = '<div><div><div><div><div><span style="color: rgba(26, 38, 51, 0.6);">ett</span></div></div></div></div></div>'
     # line_to_clear = '<span style="color: rgba(26, 38, 51, 0.6); background-color: rgb(255, 255, 255);">"mozegett"</span>'
-    line_to_clear ='“BAD ATTITUDE, the shirt proclaimed.”'
+    # line_to_clear ='“BAD ATTITUDE, the shirt proclaimed.”'
+    # line_to_clear ='<div>Sarah felt a warm glow of <i>pride</i> in her heart when she won the first place ribbon at the school science fair</div>'
+    line_to_clear ='put up a few photos on the <span style="background-color: #CCFFCC"><b>mantel</b></span> in attempt to give the place a more lived-in feel'
     print(cleanhtml(line_to_clear))
 
 
